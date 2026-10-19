@@ -1,0 +1,73 @@
+PIPELINE 11 : LE THÉ DE MOMBASA, UN JSON APLATI, UN TABLEAU HTML, UNE PLANIFICATION
+Chaque valeur est sur sa propre ligne : copiez la ligne entière, sans le titre entre crochets.
+
+==================== PL_Chai : paramètres du pipeline ====================
+
+[Paramètre 1 : nom]
+sale_no
+
+[Paramètre 1 : valeur par défaut]
+42
+
+[Paramètre 2 : nom]
+auction_date
+
+[Paramètre 2 : valeur par défaut]
+2026-10-20
+
+==================== Flatten lots (Copy data) ====================
+
+[Source : dossier]
+catalogue
+
+[Source : nom de fichier (contenu dynamique)]
+@concat('mombasa_sale', pipeline().parameters.sale_no, '_', pipeline().parameters.auction_date, '.json')
+
+[Mappage : après Importer des schémas, renommer les 7 destinations lots.xxx en]
+lot_no
+garden
+origin
+grade
+packages
+kg
+price_usd_kg
+
+[Destination : nom de table]
+auction_lots
+
+==================== Let endpoint sync (Wait) ====================
+
+[Temps d'attente en secondes]
+90
+
+==================== Price board (Script sur WH_Chai, type Requête) ====================
+
+[Script : les deux requêtes, collées en une fois]
+WITH l AS (SELECT origin, garden, grade, CAST(lot_no AS int) AS lot_no, CAST(kg AS int) AS kg, CAST(price_usd_kg AS float) AS p FROM LH_Chai.dbo.auction_lots) SELECT COUNT(*) AS lots, COUNT(p) AS sold, CAST(SUM(CASE WHEN p IS NOT NULL THEN kg END) / 1000.0 AS decimal(9,2)) AS tonnes_sold, CAST(SUM(kg * p) / SUM(CASE WHEN p IS NOT NULL THEN kg END) AS decimal(5,2)) AS avg_usd_kg, CAST(SUM(kg * p) AS decimal(12,1)) AS value_usd, (SELECT TOP 1 CONCAT('lot ', lot_no, ', ', garden, ' (', origin, '), ', grade, ', ', p, ' USD/kg') FROM l ORDER BY p DESC) AS best_lot FROM l;
+WITH l AS (SELECT origin, CAST(kg AS int) AS kg, CAST(price_usd_kg AS float) AS p FROM LH_Chai.dbo.auction_lots), t AS (SELECT origin, COUNT(*) AS lots, COUNT(p) AS sold, CAST(SUM(CASE WHEN p IS NOT NULL THEN kg END) / 1000.0 AS decimal(9,2)) AS tonnes, CAST(SUM(kg * p) / SUM(CASE WHEN p IS NOT NULL THEN kg END) AS decimal(5,2)) AS avg_usd_kg, MAX(p) AS top_usd_kg FROM l GROUP BY origin) SELECT STRING_AGG(CONCAT('<tr><td>', origin, '</td><td>', sold, ' / ', lots, '</td><td>', tonnes, '</td><td>', avg_usd_kg, '</td><td>', top_usd_kg, '</td></tr>'), '') WITHIN GROUP (ORDER BY avg_usd_kg DESC) AS html_rows FROM t;
+
+==================== Mail board (Office 365 Outlook) ====================
+
+[Objet (contenu dynamique)]
+Thé de Mombasa, vente @{pipeline().parameters.sale_no} : @{activity('Price board').output.resultSets[0].rows[0].avg_usd_kg} USD/kg en moyenne
+
+[Corps : videz le champ, puis collez dans la fenêtre d'expression]
+@concat('<p><b>Vente n° ', pipeline().parameters.sale_no, ', Mombasa, ', pipeline().parameters.auction_date, '</b></p><p>', string(activity('Price board').output.resultSets[0].rows[0].sold), ' lots vendus sur ', string(activity('Price board').output.resultSets[0].rows[0].lots), ', ', string(activity('Price board').output.resultSets[0].rows[0].tonnes_sold), ' tonnes, prix moyen ', string(activity('Price board').output.resultSets[0].rows[0].avg_usd_kg), ' USD/kg, valeur ', string(activity('Price board').output.resultSets[0].rows[0].value_usd), ' USD.<br>Meilleur lot : ', activity('Price board').output.resultSets[0].rows[0].best_lot, '.</p><table border="1" cellpadding="6" style="border-collapse:collapse"><tr><th>Origine</th><th>Lots vendus</th><th>Tonnes</th><th>Prix moyen USD/kg</th><th>Meilleur prix</th></tr>', activity('Price board').output.resultSets[1].rows[0].html_rows, '</table>')
+
+==================== Post headline (Microsoft Teams) ====================
+
+[Titre]
+Thé de Mombasa
+
+[Message]
+Thé de Mombasa, vente @{pipeline().parameters.sale_no} du @{pipeline().parameters.auction_date} : @{activity('Price board').output.resultSets[0].rows[0].sold}/@{activity('Price board').output.resultSets[0].rows[0].lots} lots vendus, prix moyen @{activity('Price board').output.resultSets[0].rows[0].avg_usd_kg} USD/kg. Meilleur lot : @{activity('Price board').output.resultSets[0].rows[0].best_lot}. Tableau complet par e-mail.
+
+==================== Planification ====================
+
+[Répéter, jour, heure, fuseau]
+Par semaine · Mardi · 16:00 · (UTC+03:00) Nairobi
+
+==================== Vérifier dans WH_Chai ====================
+
+[Requête de contrôle]
+SELECT origin, COUNT(*) AS lots, COUNT(price_usd_kg) AS sold FROM LH_Chai.dbo.auction_lots GROUP BY origin ORDER BY lots DESC;
