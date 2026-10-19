@@ -1,0 +1,1233 @@
+{
+  "centre": "Mombasa",
+  "sale_no": 42,
+  "auction_date": "2026-10-20",
+  "currency": "USD",
+  "broker": "East African Tea Brokers (fictif)",
+  "lots": [
+    {
+      "lot_no": 1088,
+      "garden": "Mabale",
+      "origin": "Ouganda",
+      "grade": "FNGS",
+      "packages": 40,
+      "kg": 2600,
+      "price_usd_kg": 1.51
+    },
+    {
+      "lot_no": 1123,
+      "garden": "Rwegura",
+      "origin": "Burundi",
+      "grade": "PD",
+      "packages": 40,
+      "kg": 2600,
+      "price_usd_kg": 2.16
+    },
+    {
+      "lot_no": 1005,
+      "garden": "Iriaini",
+      "origin": "Kenya",
+      "grade": "PF1",
+      "packages": 20,
+      "kg": 1300,
+      "price_usd_kg": 2.26
+    },
+    {
+      "lot_no": 1010,
+      "garden": "Mataara",
+      "origin": "Kenya",
+      "grade": "PF1",
+      "packages": 40,
+      "kg": 2600,
+      "price_usd_kg": 2.41
+    },
+    {
+      "lot_no": 1091,
+      "garden": "Kayonza",
+      "origin": "Ouganda",
+      "grade": "FNGS",
+      "packages": 50,
+      "kg": 3250,
+      "price_usd_kg": 1.14
+    },
+    {
+      "lot_no": 1040,
+      "garden": "Michimikuru",
+      "origin": "Kenya",
+      "grade": "DUST1",
+      "packages": 40,
+      "kg": 2600,
+      "price_usd_kg": 1.75
+    },
+    {
+      "lot_no": 1133,
+      "garden": "Butuhe",
+      "origin": "RD Congo",
+      "grade": "DUST1",
+      "packages": 40,
+      "kg": 2600,
+      "price_usd_kg": 1.22
+    },
+    {
+      "lot_no": 1106,
+      "garden": "Igara",
+      "origin": "Ouganda",
+      "grade": "PD",
+      "packages": 50,
+      "kg": 3250,
+      "price_usd_kg": 1.5
+    },
+    {
+      "lot_no": 1044,
+      "garden": "Ragati",
+      "origin": "Kenya",
+      "grade": "PF1",
+      "packages": 60,
+      "kg": 3900,
+      "price_usd_kg": null
+    },
+    {
+      "lot_no": 1116,
+      "garden": "Kibena",
+      "origin": "Tanzanie",
+      "grade": "PF1",
+      "packages": 40,
+      "kg": 2600,
+      "price_usd_kg": 2.0
+    },
+    {
+      "lot_no": 1046,
+      "garden": "Ragati",
+      "origin": "Kenya",
+      "grade": "BP1",
+      "packages": 60,
+      "kg": 3900,
+      "price_usd_kg": 2.39
+    },
+    {
+      "lot_no": 1086,
+      "garden": "Gisovu",
+      "origin": "Rwanda",
+      "grade": "PD",
+      "packages": 50,
+      "kg": 3250,
+      "price_usd_kg": 2.87
+    },
+    {
+      "lot_no": 1070,
+      "garden": "Gisovu",
+      "origin": "Rwanda",
+      "grade": "DUST1",
+      "packages": 50,
+      "kg": 3250,
+      "price_usd_kg": 2.14
+    },
+    {
+      "lot_no": 1002,
+      "garden": "Ragati",
+      "origin": "Kenya",
+      "grade": "PD",
+      "packages": 20,
+      "kg": 1300,
+      "price_usd_kg": 2.71
+    },
+    {
+      "lot_no": 1030,
+      "garden": "Gitugi",
+      "origin": "Kenya",
+      "grade": "D1",
+      "packages": 40,
+      "kg": 2600,
+      "price_usd_kg": 2.23
+    },
+    {
+      "lot_no": 1118,
+      "garden": "Kibena",
+      "origin": "Tanzanie",
+      "grade": "DUST1",
+      "packages": 40,
+      "kg": 2600,
+      "price_usd_kg": 1.52
+    },
+    {
+      "lot_no": 1015,
+      "garden": "Mataara",
+      "origin": "Kenya",
+      "grade": "BP1",
+      "packages": 20,
+      "kg": 1300,
+      "price_usd_kg": 2.76
+    },
+    {
+      "lot_no": 1076,
+      "garden": "Pfunda",
+      "origin": "Rwanda",
+      "grade": "PD",
+      "packages": 20,
+      "kg": 1300,
+      "price_usd_kg": 3.13
+    },
+    {
+      "lot_no": 1103,
+      "garden": "Mabale",
+      "origin": "Ouganda",
+      "grade": "PD",
+      "packages": 60,
+      "kg": 3900,
+      "price_usd_kg": null
+    },
+    {
+      "lot_no": 1023,
+      "garden": "Kapkoros",
+      "origin": "Kenya",
+      "grade": "D1",
+      "packages": 30,
+      "kg": 1950,
+      "price_usd_kg": 2.45
+    },
+    {
+      "lot_no": 1102,
+      "garden": "Igara",
+      "origin": "Ouganda",
+      "grade": "BP1",
+      "packages": 60,
+      "kg": 3900,
+      "price_usd_kg": null
+    },
+    {
+      "lot_no": 1004,
+      "garden": "Kangaita",
+      "origin": "Kenya",
+      "grade": "PF1",
+      "packages": 40,
+      "kg": 2600,
+      "price_usd_kg": null
+    },
+    {
+      "lot_no": 1019,
+      "garden": "Kangaita",
+      "origin": "Kenya",
+      "grade": "FNGS",
+      "packages": 60,
+      "kg": 3900,
+      "price_usd_kg": null
+    },
+    {
+      "lot_no": 1066,
+      "garden": "Nyabihu",
+      "origin": "Rwanda",
+      "grade": "FNGS",
+      "packages": 40,
+      "kg": 2600,
+      "price_usd_kg": 2.62
+    },
+    {
+      "lot_no": 1059,
+      "garden": "Kambaa",
+      "origin": "Kenya",
+      "grade": "D1",
+      "packages": 40,
+      "kg": 2600,
+      "price_usd_kg": 2.66
+    },
+    {
+      "lot_no": 1073,
+      "garden": "Rubaya",
+      "origin": "Rwanda",
+      "grade": "D1",
+      "packages": 20,
+      "kg": 1300,
+      "price_usd_kg": 2.56
+    },
+    {
+      "lot_no": 1038,
+      "garden": "Gitugi",
+      "origin": "Kenya",
+      "grade": "DUST1",
+      "packages": 20,
+      "kg": 1300,
+      "price_usd_kg": 2.34
+    },
+    {
+      "lot_no": 1132,
+      "garden": "Kitabi",
+      "origin": "RD Congo",
+      "grade": "FNGS",
+      "packages": 60,
+      "kg": 3900,
+      "price_usd_kg": 1.18
+    },
+    {
+      "lot_no": 1049,
+      "garden": "Mataara",
+      "origin": "Kenya",
+      "grade": "PF1",
+      "packages": 40,
+      "kg": 2600,
+      "price_usd_kg": 2.52
+    },
+    {
+      "lot_no": 1074,
+      "garden": "Pfunda",
+      "origin": "Rwanda",
+      "grade": "PD",
+      "packages": 40,
+      "kg": 2600,
+      "price_usd_kg": 2.79
+    },
+    {
+      "lot_no": 1112,
+      "garden": "Mufindi",
+      "origin": "Tanzanie",
+      "grade": "PD",
+      "packages": 40,
+      "kg": 2600,
+      "price_usd_kg": 1.85
+    },
+    {
+      "lot_no": 1062,
+      "garden": "Kambaa",
+      "origin": "Kenya",
+      "grade": "PD",
+      "packages": 40,
+      "kg": 2600,
+      "price_usd_kg": 2.85
+    },
+    {
+      "lot_no": 1029,
+      "garden": "Mataara",
+      "origin": "Kenya",
+      "grade": "PF1",
+      "packages": 50,
+      "kg": 3250,
+      "price_usd_kg": 2.65
+    },
+    {
+      "lot_no": 1053,
+      "garden": "Kapkoros",
+      "origin": "Kenya",
+      "grade": "D1",
+      "packages": 30,
+      "kg": 1950,
+      "price_usd_kg": 2.37
+    },
+    {
+      "lot_no": 1048,
+      "garden": "Kapkoros",
+      "origin": "Kenya",
+      "grade": "PD",
+      "packages": 40,
+      "kg": 2600,
+      "price_usd_kg": 2.63
+    },
+    {
+      "lot_no": 1099,
+      "garden": "Kayonza",
+      "origin": "Ouganda",
+      "grade": "D1",
+      "packages": 20,
+      "kg": 1300,
+      "price_usd_kg": 1.44
+    },
+    {
+      "lot_no": 1090,
+      "garden": "Igara",
+      "origin": "Ouganda",
+      "grade": "PF1",
+      "packages": 40,
+      "kg": 2600,
+      "price_usd_kg": null
+    },
+    {
+      "lot_no": 1119,
+      "garden": "Mufindi",
+      "origin": "Tanzanie",
+      "grade": "BP1",
+      "packages": 40,
+      "kg": 2600,
+      "price_usd_kg": 1.86
+    },
+    {
+      "lot_no": 1115,
+      "garden": "Mufindi",
+      "origin": "Tanzanie",
+      "grade": "PF1",
+      "packages": 20,
+      "kg": 1300,
+      "price_usd_kg": 2.08
+    },
+    {
+      "lot_no": 1016,
+      "garden": "Kapkoros",
+      "origin": "Kenya",
+      "grade": "FNGS",
+      "packages": 40,
+      "kg": 2600,
+      "price_usd_kg": 2.15
+    },
+    {
+      "lot_no": 1077,
+      "garden": "Nyabihu",
+      "origin": "Rwanda",
+      "grade": "BP1",
+      "packages": 50,
+      "kg": 3250,
+      "price_usd_kg": 3.81
+    },
+    {
+      "lot_no": 1035,
+      "garden": "Kangaita",
+      "origin": "Kenya",
+      "grade": "BP1",
+      "packages": 50,
+      "kg": 3250,
+      "price_usd_kg": null
+    },
+    {
+      "lot_no": 1089,
+      "garden": "Kayonza",
+      "origin": "Ouganda",
+      "grade": "FNGS",
+      "packages": 60,
+      "kg": 3900,
+      "price_usd_kg": 1.4
+    },
+    {
+      "lot_no": 1136,
+      "garden": "Butuhe",
+      "origin": "RD Congo",
+      "grade": "D1",
+      "packages": 50,
+      "kg": 3250,
+      "price_usd_kg": null
+    },
+    {
+      "lot_no": 1121,
+      "garden": "Teza",
+      "origin": "Burundi",
+      "grade": "DUST1",
+      "packages": 40,
+      "kg": 2600,
+      "price_usd_kg": 1.93
+    },
+    {
+      "lot_no": 1047,
+      "garden": "Gitugi",
+      "origin": "Kenya",
+      "grade": "FNGS",
+      "packages": 20,
+      "kg": 1300,
+      "price_usd_kg": 1.88
+    },
+    {
+      "lot_no": 1108,
+      "garden": "Luponde",
+      "origin": "Tanzanie",
+      "grade": "BP1",
+      "packages": 50,
+      "kg": 3250,
+      "price_usd_kg": 1.68
+    },
+    {
+      "lot_no": 1001,
+      "garden": "Kapkoros",
+      "origin": "Kenya",
+      "grade": "PD",
+      "packages": 60,
+      "kg": 3900,
+      "price_usd_kg": 2.47
+    },
+    {
+      "lot_no": 1114,
+      "garden": "Luponde",
+      "origin": "Tanzanie",
+      "grade": "PF1",
+      "packages": 40,
+      "kg": 2600,
+      "price_usd_kg": 1.55
+    },
+    {
+      "lot_no": 1006,
+      "garden": "Ragati",
+      "origin": "Kenya",
+      "grade": "BP1",
+      "packages": 50,
+      "kg": 3250,
+      "price_usd_kg": 2.37
+    },
+    {
+      "lot_no": 1034,
+      "garden": "Mataara",
+      "origin": "Kenya",
+      "grade": "PF1",
+      "packages": 30,
+      "kg": 1950,
+      "price_usd_kg": 3.01
+    },
+    {
+      "lot_no": 1083,
+      "garden": "Rubaya",
+      "origin": "Rwanda",
+      "grade": "FNGS",
+      "packages": 60,
+      "kg": 3900,
+      "price_usd_kg": 2.38
+    },
+    {
+      "lot_no": 1084,
+      "garden": "Rubaya",
+      "origin": "Rwanda",
+      "grade": "FNGS",
+      "packages": 60,
+      "kg": 3900,
+      "price_usd_kg": 2.35
+    },
+    {
+      "lot_no": 1058,
+      "garden": "Gitugi",
+      "origin": "Kenya",
+      "grade": "BP1",
+      "packages": 40,
+      "kg": 2600,
+      "price_usd_kg": 2.68
+    },
+    {
+      "lot_no": 1037,
+      "garden": "Kangaita",
+      "origin": "Kenya",
+      "grade": "FNGS",
+      "packages": 40,
+      "kg": 2600,
+      "price_usd_kg": 2.44
+    },
+    {
+      "lot_no": 1110,
+      "garden": "Mufindi",
+      "origin": "Tanzanie",
+      "grade": "FNGS",
+      "packages": 40,
+      "kg": 2600,
+      "price_usd_kg": 1.49
+    },
+    {
+      "lot_no": 1131,
+      "garden": "Kitabi",
+      "origin": "RD Congo",
+      "grade": "D1",
+      "packages": 60,
+      "kg": 3900,
+      "price_usd_kg": null
+    },
+    {
+      "lot_no": 1087,
+      "garden": "Igara",
+      "origin": "Ouganda",
+      "grade": "FNGS",
+      "packages": 50,
+      "kg": 3250,
+      "price_usd_kg": 1.22
+    },
+    {
+      "lot_no": 1075,
+      "garden": "Pfunda",
+      "origin": "Rwanda",
+      "grade": "PD",
+      "packages": 60,
+      "kg": 3900,
+      "price_usd_kg": 2.65
+    },
+    {
+      "lot_no": 1051,
+      "garden": "Ragati",
+      "origin": "Kenya",
+      "grade": "BP1",
+      "packages": 40,
+      "kg": 2600,
+      "price_usd_kg": 2.65
+    },
+    {
+      "lot_no": 1094,
+      "garden": "Mabale",
+      "origin": "Ouganda",
+      "grade": "FNGS",
+      "packages": 50,
+      "kg": 3250,
+      "price_usd_kg": 1.15
+    },
+    {
+      "lot_no": 1032,
+      "garden": "Kangaita",
+      "origin": "Kenya",
+      "grade": "DUST1",
+      "packages": 40,
+      "kg": 2600,
+      "price_usd_kg": 2.07
+    },
+    {
+      "lot_no": 1079,
+      "garden": "Pfunda",
+      "origin": "Rwanda",
+      "grade": "BP1",
+      "packages": 30,
+      "kg": 1950,
+      "price_usd_kg": 3.37
+    },
+    {
+      "lot_no": 1095,
+      "garden": "Igara",
+      "origin": "Ouganda",
+      "grade": "PD",
+      "packages": 60,
+      "kg": 3900,
+      "price_usd_kg": 1.49
+    },
+    {
+      "lot_no": 1020,
+      "garden": "Michimikuru",
+      "origin": "Kenya",
+      "grade": "PD",
+      "packages": 20,
+      "kg": 1300,
+      "price_usd_kg": 2.71
+    },
+    {
+      "lot_no": 1021,
+      "garden": "Iriaini",
+      "origin": "Kenya",
+      "grade": "BP1",
+      "packages": 30,
+      "kg": 1950,
+      "price_usd_kg": 2.36
+    },
+    {
+      "lot_no": 1064,
+      "garden": "Kangaita",
+      "origin": "Kenya",
+      "grade": "D1",
+      "packages": 30,
+      "kg": 1950,
+      "price_usd_kg": 2.67
+    },
+    {
+      "lot_no": 1097,
+      "garden": "Igara",
+      "origin": "Ouganda",
+      "grade": "FNGS",
+      "packages": 50,
+      "kg": 3250,
+      "price_usd_kg": 1.34
+    },
+    {
+      "lot_no": 1096,
+      "garden": "Mabale",
+      "origin": "Ouganda",
+      "grade": "PF1",
+      "packages": 40,
+      "kg": 2600,
+      "price_usd_kg": null
+    },
+    {
+      "lot_no": 1130,
+      "garden": "Rwegura",
+      "origin": "Burundi",
+      "grade": "FNGS",
+      "packages": 50,
+      "kg": 3250,
+      "price_usd_kg": 2.29
+    },
+    {
+      "lot_no": 1104,
+      "garden": "Igara",
+      "origin": "Ouganda",
+      "grade": "BP1",
+      "packages": 60,
+      "kg": 3900,
+      "price_usd_kg": 1.6
+    },
+    {
+      "lot_no": 1134,
+      "garden": "Butuhe",
+      "origin": "RD Congo",
+      "grade": "PD",
+      "packages": 30,
+      "kg": 1950,
+      "price_usd_kg": 1.54
+    },
+    {
+      "lot_no": 1101,
+      "garden": "Igara",
+      "origin": "Ouganda",
+      "grade": "DUST1",
+      "packages": 50,
+      "kg": 3250,
+      "price_usd_kg": 1.43
+    },
+    {
+      "lot_no": 1039,
+      "garden": "Kambaa",
+      "origin": "Kenya",
+      "grade": "PF1",
+      "packages": 50,
+      "kg": 3250,
+      "price_usd_kg": 2.97
+    },
+    {
+      "lot_no": 1033,
+      "garden": "Ragati",
+      "origin": "Kenya",
+      "grade": "PF1",
+      "packages": 60,
+      "kg": 3900,
+      "price_usd_kg": 2.63
+    },
+    {
+      "lot_no": 1063,
+      "garden": "Kangaita",
+      "origin": "Kenya",
+      "grade": "DUST1",
+      "packages": 40,
+      "kg": 2600,
+      "price_usd_kg": 2.21
+    },
+    {
+      "lot_no": 1013,
+      "garden": "Kangaita",
+      "origin": "Kenya",
+      "grade": "DUST1",
+      "packages": 20,
+      "kg": 1300,
+      "price_usd_kg": null
+    },
+    {
+      "lot_no": 1007,
+      "garden": "Kapkoros",
+      "origin": "Kenya",
+      "grade": "PD",
+      "packages": 20,
+      "kg": 1300,
+      "price_usd_kg": 2.82
+    },
+    {
+      "lot_no": 1067,
+      "garden": "Nyabihu",
+      "origin": "Rwanda",
+      "grade": "DUST1",
+      "packages": 40,
+      "kg": 2600,
+      "price_usd_kg": 2.45
+    },
+    {
+      "lot_no": 1036,
+      "garden": "Iriaini",
+      "origin": "Kenya",
+      "grade": "PD",
+      "packages": 30,
+      "kg": 1950,
+      "price_usd_kg": 2.23
+    },
+    {
+      "lot_no": 1126,
+      "garden": "Teza",
+      "origin": "Burundi",
+      "grade": "PD",
+      "packages": 30,
+      "kg": 1950,
+      "price_usd_kg": 2.57
+    },
+    {
+      "lot_no": 1082,
+      "garden": "Nyabihu",
+      "origin": "Rwanda",
+      "grade": "D1",
+      "packages": 40,
+      "kg": 2600,
+      "price_usd_kg": 2.74
+    },
+    {
+      "lot_no": 1125,
+      "garden": "Teza",
+      "origin": "Burundi",
+      "grade": "FNGS",
+      "packages": 60,
+      "kg": 3900,
+      "price_usd_kg": null
+    },
+    {
+      "lot_no": 1003,
+      "garden": "Michimikuru",
+      "origin": "Kenya",
+      "grade": "DUST1",
+      "packages": 30,
+      "kg": 1950,
+      "price_usd_kg": null
+    },
+    {
+      "lot_no": 1072,
+      "garden": "Rubaya",
+      "origin": "Rwanda",
+      "grade": "D1",
+      "packages": 30,
+      "kg": 1950,
+      "price_usd_kg": 2.47
+    },
+    {
+      "lot_no": 1017,
+      "garden": "Ragati",
+      "origin": "Kenya",
+      "grade": "PD",
+      "packages": 50,
+      "kg": 3250,
+      "price_usd_kg": 2.59
+    },
+    {
+      "lot_no": 1014,
+      "garden": "Mataara",
+      "origin": "Kenya",
+      "grade": "DUST1",
+      "packages": 30,
+      "kg": 1950,
+      "price_usd_kg": 1.76
+    },
+    {
+      "lot_no": 1065,
+      "garden": "Pfunda",
+      "origin": "Rwanda",
+      "grade": "PF1",
+      "packages": 40,
+      "kg": 2600,
+      "price_usd_kg": 3.39
+    },
+    {
+      "lot_no": 1022,
+      "garden": "Kangaita",
+      "origin": "Kenya",
+      "grade": "PD",
+      "packages": 40,
+      "kg": 2600,
+      "price_usd_kg": 2.73
+    },
+    {
+      "lot_no": 1008,
+      "garden": "Ragati",
+      "origin": "Kenya",
+      "grade": "DUST1",
+      "packages": 40,
+      "kg": 2600,
+      "price_usd_kg": null
+    },
+    {
+      "lot_no": 1105,
+      "garden": "Igara",
+      "origin": "Ouganda",
+      "grade": "BP1",
+      "packages": 50,
+      "kg": 3250,
+      "price_usd_kg": 1.62
+    },
+    {
+      "lot_no": 1061,
+      "garden": "Kambaa",
+      "origin": "Kenya",
+      "grade": "FNGS",
+      "packages": 40,
+      "kg": 2600,
+      "price_usd_kg": 2.48
+    },
+    {
+      "lot_no": 1100,
+      "garden": "Igara",
+      "origin": "Ouganda",
+      "grade": "BP1",
+      "packages": 50,
+      "kg": 3250,
+      "price_usd_kg": null
+    },
+    {
+      "lot_no": 1009,
+      "garden": "Kangaita",
+      "origin": "Kenya",
+      "grade": "DUST1",
+      "packages": 40,
+      "kg": 2600,
+      "price_usd_kg": 2.12
+    },
+    {
+      "lot_no": 1080,
+      "garden": "Pfunda",
+      "origin": "Rwanda",
+      "grade": "BP1",
+      "packages": 60,
+      "kg": 3900,
+      "price_usd_kg": 3.56
+    },
+    {
+      "lot_no": 1093,
+      "garden": "Igara",
+      "origin": "Ouganda",
+      "grade": "BP1",
+      "packages": 30,
+      "kg": 1950,
+      "price_usd_kg": 1.6
+    },
+    {
+      "lot_no": 1025,
+      "garden": "Kapkoros",
+      "origin": "Kenya",
+      "grade": "D1",
+      "packages": 60,
+      "kg": 3900,
+      "price_usd_kg": 1.98
+    },
+    {
+      "lot_no": 1098,
+      "garden": "Kayonza",
+      "origin": "Ouganda",
+      "grade": "PD",
+      "packages": 60,
+      "kg": 3900,
+      "price_usd_kg": 1.74
+    },
+    {
+      "lot_no": 1071,
+      "garden": "Nyabihu",
+      "origin": "Rwanda",
+      "grade": "D1",
+      "packages": 20,
+      "kg": 1300,
+      "price_usd_kg": 2.39
+    },
+    {
+      "lot_no": 1028,
+      "garden": "Iriaini",
+      "origin": "Kenya",
+      "grade": "D1",
+      "packages": 20,
+      "kg": 1300,
+      "price_usd_kg": 2.48
+    },
+    {
+      "lot_no": 1111,
+      "garden": "Luponde",
+      "origin": "Tanzanie",
+      "grade": "D1",
+      "packages": 50,
+      "kg": 3250,
+      "price_usd_kg": 1.51
+    },
+    {
+      "lot_no": 1117,
+      "garden": "Mufindi",
+      "origin": "Tanzanie",
+      "grade": "FNGS",
+      "packages": 50,
+      "kg": 3250,
+      "price_usd_kg": 1.53
+    },
+    {
+      "lot_no": 1050,
+      "garden": "Kapkoros",
+      "origin": "Kenya",
+      "grade": "PD",
+      "packages": 50,
+      "kg": 3250,
+      "price_usd_kg": 2.52
+    },
+    {
+      "lot_no": 1045,
+      "garden": "Ragati",
+      "origin": "Kenya",
+      "grade": "PF1",
+      "packages": 50,
+      "kg": 3250,
+      "price_usd_kg": 3.05
+    },
+    {
+      "lot_no": 1129,
+      "garden": "Rwegura",
+      "origin": "Burundi",
+      "grade": "PD",
+      "packages": 50,
+      "kg": 3250,
+      "price_usd_kg": 2.24
+    },
+    {
+      "lot_no": 1057,
+      "garden": "Iriaini",
+      "origin": "Kenya",
+      "grade": "BP1",
+      "packages": 60,
+      "kg": 3900,
+      "price_usd_kg": 3.19
+    },
+    {
+      "lot_no": 1068,
+      "garden": "Pfunda",
+      "origin": "Rwanda",
+      "grade": "PD",
+      "packages": 40,
+      "kg": 2600,
+      "price_usd_kg": 3.09
+    },
+    {
+      "lot_no": 1055,
+      "garden": "Kapkoros",
+      "origin": "Kenya",
+      "grade": "PD",
+      "packages": 40,
+      "kg": 2600,
+      "price_usd_kg": 2.68
+    },
+    {
+      "lot_no": 1109,
+      "garden": "Kibena",
+      "origin": "Tanzanie",
+      "grade": "DUST1",
+      "packages": 40,
+      "kg": 2600,
+      "price_usd_kg": 1.2
+    },
+    {
+      "lot_no": 1027,
+      "garden": "Ragati",
+      "origin": "Kenya",
+      "grade": "PD",
+      "packages": 60,
+      "kg": 3900,
+      "price_usd_kg": 2.68
+    },
+    {
+      "lot_no": 1122,
+      "garden": "Teza",
+      "origin": "Burundi",
+      "grade": "BP1",
+      "packages": 40,
+      "kg": 2600,
+      "price_usd_kg": 2.89
+    },
+    {
+      "lot_no": 1124,
+      "garden": "Rwegura",
+      "origin": "Burundi",
+      "grade": "FNGS",
+      "packages": 30,
+      "kg": 1950,
+      "price_usd_kg": 2.27
+    },
+    {
+      "lot_no": 1120,
+      "garden": "Kibena",
+      "origin": "Tanzanie",
+      "grade": "PF1",
+      "packages": 20,
+      "kg": 1300,
+      "price_usd_kg": 1.8
+    },
+    {
+      "lot_no": 1081,
+      "garden": "Rubaya",
+      "origin": "Rwanda",
+      "grade": "D1",
+      "packages": 40,
+      "kg": 2600,
+      "price_usd_kg": 2.39
+    },
+    {
+      "lot_no": 1069,
+      "garden": "Nyabihu",
+      "origin": "Rwanda",
+      "grade": "PF1",
+      "packages": 30,
+      "kg": 1950,
+      "price_usd_kg": 2.78
+    },
+    {
+      "lot_no": 1026,
+      "garden": "Kambaa",
+      "origin": "Kenya",
+      "grade": "BP1",
+      "packages": 60,
+      "kg": 3900,
+      "price_usd_kg": 3.04
+    },
+    {
+      "lot_no": 1012,
+      "garden": "Iriaini",
+      "origin": "Kenya",
+      "grade": "BP1",
+      "packages": 40,
+      "kg": 2600,
+      "price_usd_kg": 2.66
+    },
+    {
+      "lot_no": 1043,
+      "garden": "Iriaini",
+      "origin": "Kenya",
+      "grade": "FNGS",
+      "packages": 50,
+      "kg": 3250,
+      "price_usd_kg": 1.89
+    },
+    {
+      "lot_no": 1113,
+      "garden": "Mufindi",
+      "origin": "Tanzanie",
+      "grade": "DUST1",
+      "packages": 60,
+      "kg": 3900,
+      "price_usd_kg": 1.35
+    },
+    {
+      "lot_no": 1011,
+      "garden": "Kapkoros",
+      "origin": "Kenya",
+      "grade": "PF1",
+      "packages": 30,
+      "kg": 1950,
+      "price_usd_kg": 2.77
+    },
+    {
+      "lot_no": 1041,
+      "garden": "Kangaita",
+      "origin": "Kenya",
+      "grade": "PD",
+      "packages": 40,
+      "kg": 2600,
+      "price_usd_kg": 2.6
+    },
+    {
+      "lot_no": 1054,
+      "garden": "Mataara",
+      "origin": "Kenya",
+      "grade": "PF1",
+      "packages": 60,
+      "kg": 3900,
+      "price_usd_kg": null
+    },
+    {
+      "lot_no": 1092,
+      "garden": "Igara",
+      "origin": "Ouganda",
+      "grade": "D1",
+      "packages": 20,
+      "kg": 1300,
+      "price_usd_kg": 1.35
+    },
+    {
+      "lot_no": 1128,
+      "garden": "Teza",
+      "origin": "Burundi",
+      "grade": "PD",
+      "packages": 50,
+      "kg": 3250,
+      "price_usd_kg": 2.38
+    },
+    {
+      "lot_no": 1127,
+      "garden": "Rwegura",
+      "origin": "Burundi",
+      "grade": "FNGS",
+      "packages": 20,
+      "kg": 1300,
+      "price_usd_kg": 1.93
+    },
+    {
+      "lot_no": 1056,
+      "garden": "Kapkoros",
+      "origin": "Kenya",
+      "grade": "FNGS",
+      "packages": 20,
+      "kg": 1300,
+      "price_usd_kg": 2.46
+    },
+    {
+      "lot_no": 1031,
+      "garden": "Iriaini",
+      "origin": "Kenya",
+      "grade": "PD",
+      "packages": 30,
+      "kg": 1950,
+      "price_usd_kg": 2.26
+    },
+    {
+      "lot_no": 1135,
+      "garden": "Butuhe",
+      "origin": "RD Congo",
+      "grade": "D1",
+      "packages": 20,
+      "kg": 1300,
+      "price_usd_kg": 1.18
+    },
+    {
+      "lot_no": 1107,
+      "garden": "Luponde",
+      "origin": "Tanzanie",
+      "grade": "DUST1",
+      "packages": 40,
+      "kg": 2600,
+      "price_usd_kg": null
+    },
+    {
+      "lot_no": 1024,
+      "garden": "Kapkoros",
+      "origin": "Kenya",
+      "grade": "FNGS",
+      "packages": 40,
+      "kg": 2600,
+      "price_usd_kg": 1.91
+    },
+    {
+      "lot_no": 1060,
+      "garden": "Kambaa",
+      "origin": "Kenya",
+      "grade": "PD",
+      "packages": 40,
+      "kg": 2600,
+      "price_usd_kg": 2.81
+    },
+    {
+      "lot_no": 1042,
+      "garden": "Mataara",
+      "origin": "Kenya",
+      "grade": "BP1",
+      "packages": 60,
+      "kg": 3900,
+      "price_usd_kg": 2.88
+    },
+    {
+      "lot_no": 1018,
+      "garden": "Gitugi",
+      "origin": "Kenya",
+      "grade": "DUST1",
+      "packages": 20,
+      "kg": 1300,
+      "price_usd_kg": 1.76
+    },
+    {
+      "lot_no": 1078,
+      "garden": "Gisovu",
+      "origin": "Rwanda",
+      "grade": "PD",
+      "packages": 20,
+      "kg": 1300,
+      "price_usd_kg": null
+    },
+    {
+      "lot_no": 1052,
+      "garden": "Iriaini",
+      "origin": "Kenya",
+      "grade": "PD",
+      "packages": 20,
+      "kg": 1300,
+      "price_usd_kg": 2.74
+    },
+    {
+      "lot_no": 1085,
+      "garden": "Pfunda",
+      "origin": "Rwanda",
+      "grade": "PF1",
+      "packages": 40,
+      "kg": 2600,
+      "price_usd_kg": 3.66
+    }
+  ]
+}
