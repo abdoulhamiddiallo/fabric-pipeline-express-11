@@ -22,6 +22,10 @@ Le titre publié dans Microsoft Teams, construit à partir du premier résultat 
 
 ![Le titre de la vente dans Microsoft Teams](images/teams_message.png)
 
+Le tableau reçu dans Outlook, écrit entièrement par le second résultat du Script, du meilleur prix moyen au plus bas.
+
+![Le tableau par origine dans Outlook](images/email_board.png)
+
 Le lignage de l'espace de travail : le lakehouse et l'entrepôt alimentent le pipeline, qui s'appuie aussi sur les connexions Outlook et Teams.
 
 ![Le lignage de l'espace de travail](images/lineage.png)
@@ -31,7 +35,7 @@ Le lignage de l'espace de travail : le lakehouse et l'entrepôt alimentent le pi
 | Indicateur | Valeur |
 |---|---|
 | Activités | 5 (Copy data, Wait, Script, Office 365 Outlook, Microsoft Teams) et une planification |
-| Nouveautés | JSON imbriqué aplati par la copie, nom de fichier construit par expression, Script à deux résultats, e-mail HTML produit par une expression, deux notifications en parallèle, planification hebdomadaire |
+| Nouveautés | JSON imbriqué aplati par la copie, nom de fichier construit par expression, Script à deux résultats, tableau HTML écrit par le SQL et envoyé tel quel, deux notifications en parallèle, planification hebdomadaire |
 | Lots au catalogue | 136, venus de 6 pays |
 | Lots vendus | 118 (18 retirés, invendus) |
 | Thé vendu | 308,75 tonnes pour 697 066,5 USD |
@@ -53,8 +57,8 @@ Après une vente, acheteurs, courtiers et producteurs veulent la même chose : s
 |---|---|---|
 | `Flatten lots` | Copy data | `@concat('mombasa_sale', sale_no, '_', auction_date, '.json')` vers `auction_lots`, une ligne par lot, action Remplacer |
 | `Let endpoint sync` | Wait | 90 secondes pour que le point de terminaison SQL voie la nouvelle table |
-| `Price board` | Script | Deux requêtes : `resultSets[0]` le marché du jour, `resultSets[1]` les lignes `<tr>` triées par prix moyen |
-| `Mail board` | Office 365 Outlook | Corps produit par une seule expression `@concat(...)` : résumé et tableau HTML |
+| `Price board` | Script | Deux requêtes : `resultSets[0]` le marché du jour, `resultSets[1]` le tableau HTML complet, trié par prix moyen |
+| `Mail board` | Office 365 Outlook | Corps réduit à une ligne : `@{...resultSets[1].rows[0].html_table}` |
 | `Post headline` | Microsoft Teams | Le titre de la vente, en parallèle de l'e-mail |
 | Planification | Déclencheur planifié | Chaque mardi à 16:00, fuseau (UTC+03:00) Nairobi |
 
@@ -64,7 +68,7 @@ Après une vente, acheteurs, courtiers et producteurs veulent la même chose : s
 
 **Un Script, deux réponses.** Deux `SELECT` dans le même Script donnent deux résultats, lus par `resultSets[0]` et `resultSets[1]`. Un seul aller-retour vers l'entrepôt pour le résumé et le tableau.
 
-**Le SQL écrit le HTML, l'expression l'assemble.** `STRING_AGG` fabrique les lignes `<tr>` dans l'ordre des prix. Le corps de l'e-mail est une seule expression `@concat` : tout le HTML sort de l'expression, il est donc interprété comme un vrai tableau.
+**Le SQL écrit le HTML, l'e-mail le transporte.** `STRING_AGG` fabrique les lignes `<tr>` dans l'ordre des prix, un `CONCAT` ajoute `<table>` et l'en-tête. L'éditeur du corps protégerait des balises tapées à la main ; le HTML renvoyé par une activité, lui, est interprété. Le corps ne contient donc qu'une référence à `html_table`, et le tableau s'affiche.
 
 **Le temps comme déclencheur.** La planification lance le pipeline avec les valeurs par défaut de ses paramètres. Pour la vente 43, on change `sale_no` et `auction_date`, et le nom du fichier suit.
 
@@ -90,9 +94,9 @@ LH_Chai.dbo.auction_lots   136 lignes : en-tête répété + lot_no, garden, ori
                                          ▼
 Script Price board sur WH_Chai
    ├─ resultSets[0]  lots 136 · sold 118 · tonnes 308.75 · avg 2.26 USD/kg · best lot 1077 Nyabihu (Rwanda)
-   └─ resultSets[1]  <tr><td>Rwanda</td>... six lignes triées par prix moyen
+   └─ resultSets[1]  html_table : <table>... en-tête et six lignes triées par prix moyen
                                          ▼
-   ├─▶ Office 365 Outlook Mail board   résumé + tableau HTML par origine
+   ├─▶ Office 365 Outlook Mail board   moyenne dans l'objet, tableau HTML par origine dans le corps
    └─▶ Microsoft Teams Post headline   « Thé de Mombasa, vente 42 du 2026-10-20 : 118/136 lots vendus, ... »
 Planification : chaque mardi, 16:00, (UTC+03:00) Nairobi
 ```
@@ -105,7 +109,7 @@ Planification : chaque mardi, 16:00, (UTC+03:00) Nairobi
 | `WH_Chai` | Entrepôt | Exécute le Script et lit le lakehouse par son nom à trois parties |
 | `PL_Chai` | Pipeline | Orchestre la copie, l'attente, le calcul, les deux notifications et la planification |
 
-La seconde requête du Script, qui écrit les lignes du tableau HTML :
+La seconde requête du Script, qui écrit tout le tableau HTML :
 
 ```sql
 WITH l AS (SELECT origin, CAST(kg AS int) AS kg, CAST(price_usd_kg AS float) AS p FROM LH_Chai.dbo.auction_lots),
@@ -114,9 +118,12 @@ t AS (SELECT origin, COUNT(*) AS lots, COUNT(p) AS sold,
              CAST(SUM(kg * p) / SUM(CASE WHEN p IS NOT NULL THEN kg END) AS decimal(5,2)) AS avg_usd_kg,
              MAX(p) AS top_usd_kg
       FROM l GROUP BY origin)
-SELECT STRING_AGG(CONCAT('<tr><td>', origin, '</td><td>', sold, ' / ', lots, '</td><td>', tonnes,
-                         '</td><td>', avg_usd_kg, '</td><td>', top_usd_kg, '</td></tr>'), '')
-       WITHIN GROUP (ORDER BY avg_usd_kg DESC) AS html_rows
+SELECT CONCAT('<table border="1" cellpadding="6" style="border-collapse:collapse">',
+              '<tr><th>Origine</th><th>Lots vendus</th><th>Tonnes</th><th>Prix moyen USD/kg</th><th>Meilleur prix</th></tr>',
+              STRING_AGG(CONCAT('<tr><td>', origin, '</td><td>', sold, ' / ', lots, '</td><td>', tonnes,
+                                '</td><td>', avg_usd_kg, '</td><td>', top_usd_kg, '</td></tr>'), '')
+              WITHIN GROUP (ORDER BY avg_usd_kg DESC),
+              '</table>') AS html_table
 FROM t;
 ```
 
@@ -151,8 +158,8 @@ Chaque lot porte `lot_no`, `garden` (le jardin de thé), `origin`, `grade` (BP1,
 1. Créer un lakehouse `LH_Chai`, un dossier `Files/catalogue`, y déposer le JSON. Créer un entrepôt `WH_Chai`.
 2. Créer `PL_Chai` avec les paramètres `sale_no` = `42` et `auction_date` = `2026-10-20`.
 3. Copy data `Flatten lots` : nom de fichier par expression, format JSON, **Importer des schémas**, renommer les sept destinations `lots.xxx` sans le préfixe. Exécuter : 136 lignes.
-4. Wait de 90 s, puis Script `Price board` sur `WH_Chai` avec les deux requêtes de [`sql/01_market_summary_and_html_rows.sql`](sql/01_market_summary_and_html_rows.sql).
-5. Outlook (corps en une expression `@concat`) et Teams, tous deux reliés au Script. Exécuter, puis activer la planification du mardi.
+4. Wait de 90 s, puis Script `Price board` sur `WH_Chai` avec les deux requêtes de [`sql/01_market_summary_and_html_table.sql`](sql/01_market_summary_and_html_table.sql).
+5. Outlook (corps réduit à la ligne `html_table`) et Teams, tous deux reliés au Script. Exécuter, puis activer la planification du mardi.
 
 ## 📂 Structure du dépôt
 
@@ -162,7 +169,7 @@ fabric-pipeline-express-11/
 ├── Pipeline_Fabric_Guide_11_public.pdf      le guide de 7 pages
 ├── data/                                    le catalogue JSON et les expressions
 ├── sql/
-│   ├── 01_market_summary_and_html_rows.sql  les deux requêtes du Script
+│   ├── 01_market_summary_and_html_table.sql  les deux requêtes du Script
 │   └── 02_controle.sql                      lots offerts et vendus par origine
 ├── tools/
 │   ├── generate_dataset.py                  régénère le catalogue
@@ -171,6 +178,7 @@ fabric-pipeline-express-11/
     ├── pipeline_diagram.svg                 le schéma du pipeline
     ├── pipeline_run.png                     PL_Chai après une exécution réussie
     ├── teams_message.png                    le titre dans Microsoft Teams
+    ├── email_board.png                      le tableau reçu dans Outlook
     └── lineage.png                          le lignage de l'espace de travail
 ```
 
@@ -180,7 +188,7 @@ Microsoft Fabric Data Factory · Copy data JSON et mappage · Expressions `@conc
 
 ## ✅ Conclusion
 
-Un fichier conçu pour les machines devient un rapport conçu pour les gens. La copie déplie le JSON, le Script calcule le marché et écrit le tableau, l'expression assemble l'e-mail, et la planification fait revenir le tout chaque semaine. Cinq activités, aucun code Spark, et le marché du thé d'Afrique de l'Est dans la boîte mail chaque mardi.
+Un fichier conçu pour les machines devient un rapport conçu pour les gens. La copie déplie le JSON, le Script calcule le marché et écrit le tableau, l'e-mail le transporte tel quel, et la planification fait revenir le tout chaque semaine. Cinq activités, aucun code Spark, et le marché du thé d'Afrique de l'Est dans la boîte mail chaque mardi.
 
 ## 💭 Dernier mot
 
